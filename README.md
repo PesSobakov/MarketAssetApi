@@ -14,15 +14,15 @@ Http Seed database
 ```
 /api/MarketAsset/seed
 ```
-Http Get market asset list
+Http Get list of supported market assets
 ```
 /api/MarketAsset/market-assets
 ```
-Http Get historical prices
+Http Get historical price information for specific asset(s)
 ```
 /api/MarketAsset/historical-prices
 ```
-WebSocket Get real time prices
+WebSocket Get real time price information for specific asset(s)
 ```
 /api/MarketAsset/real-time-prices
 ```
