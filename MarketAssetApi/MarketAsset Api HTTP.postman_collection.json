@@ -1,0 +1,97 @@
+{
+	"info": {
+		"_postman_id": "db2799eb-0fcf-4be8-a7fa-9678e80eba63",
+		"name": "MarketAsset Api HTTP",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "46430750",
+		"_collection_link": "https://andriimorhun.postman.co/workspace/Andrii-Morhun's-Workspace~5dae2206-0b05-4721-8b9d-85dcc3d2b90a/collection/46430750-db2799eb-0fcf-4be8-a7fa-9678e80eba63?action=share&source=collection_link&creator=46430750"
+	},
+	"item": [
+		{
+			"name": "HistoricalPrices",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{URI}}/api/MarketAsset/historical-prices?symbols=EUR/USD&symbols=AUD/JPY&interval=1&periodicity=hour&startDate=2025-07-01&endDate=2025-07-02",
+					"host": [
+						"{{URI}}"
+					],
+					"path": [
+						"api",
+						"MarketAsset",
+						"historical-prices"
+					],
+					"query": [
+						{
+							"key": "symbols",
+							"value": "EUR/USD"
+						},
+						{
+							"key": "symbols",
+							"value": "AUD/JPY"
+						},
+						{
+							"key": "interval",
+							"value": "1"
+						},
+						{
+							"key": "periodicity",
+							"value": "hour"
+						},
+						{
+							"key": "startDate",
+							"value": "2025-07-01"
+						},
+						{
+							"key": "endDate",
+							"value": "2025-07-02"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "MarketAssets",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{URI}}/api/MarketAsset/market-assets",
+					"host": [
+						"{{URI}}"
+					],
+					"path": [
+						"api",
+						"MarketAsset",
+						"market-assets"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Seed",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{URI}}/api/MarketAsset/seed",
+					"host": [
+						"{{URI}}"
+					],
+					"path": [
+						"api",
+						"MarketAsset",
+						"seed"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

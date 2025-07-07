@@ -1,0 +1,33 @@
+version: '3.8'
+
+services:
+
+  postgres_db:
+    image: postgres:16.2
+    environment:   # Set up postgres database name and password
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: market_asset
+      POSTGRES_USER: root
+    ports:    # Set up ports exposed for other containers to connect to
+      - 8432:5432
+#    volumes:
+#      - ./postgres:/docker-entrypoint-initdb.d    
+
+  market_asset_api:
+    build:
+      context: "./MarketAssetApi"
+      dockerfile: "./Dockerfile"
+    depends_on:
+      - postgres_db
+    command:
+      tail -f /dev/null
+    environment:   # Set up postgres database name and password
+      FintachartsOptions__User: "r_test@fintatech.com"
+      FintachartsOptions__Password: "kisfiz-vUnvy9-sopnyv"
+      FintachartsOptions__Provider: "simulation"
+      ASPNETCORE_HTTP_PORTS: "8080"
+      DATABASE_CONNECTION_STRING: "Server=postgres_db:5432;Database=market_asset;User Id=root;Password=password;TrustServerCertificate=True;"
+    ports:    # Set up ports exposed for other containers to connect to
+      - 7017:8080
+    volumes:
+      - ~/.aspnet/https:/https:ro

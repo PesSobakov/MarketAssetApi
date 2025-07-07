@@ -1,0 +1,1 @@
+ {"[custom]-new-env-1":{"url":"ws://localhost:5030/api/MarketAsset/real-time-prices?symbols=EUR/USD&symbols=AUD/JPY","provider":"websocket","order":3,"methods":[]}}
